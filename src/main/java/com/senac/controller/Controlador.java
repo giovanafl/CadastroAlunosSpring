@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -25,14 +26,14 @@ public class Controlador {
 	public String deslogar() {
 		HttpSession session = dao.getSession();
 		session.invalidate();
-		return "index.jsp";
+		return "index";
 	}
 	
 	@GetMapping("listarAlunos")
 	public String listarAlunos(Model model) {				
 		ArrayList<Aluno> listaAlunos= dao.listarAlunos();
 		model.addAttribute("listaAlunos",listaAlunos);	
-		return "listarAlunos.jsp";
+		return "listarAlunos";
 	}
 	
 	@PostMapping ("autenticar")
@@ -54,5 +55,18 @@ public class Controlador {
 		}
 		
 		return "index.jsp";
+	}
+	
+	@PostMapping("alterar")
+	public String alterarAlunos () {
+		return null;
+	}
+	
+	@GetMapping("excluir")
+	public String excluirAluno (@PathVariable Integer id) {
+		aluno.setId(id);
+		dao.excluirAluno(aluno);
+		return "redirect:/aluno/";
+		
 	}
 }
