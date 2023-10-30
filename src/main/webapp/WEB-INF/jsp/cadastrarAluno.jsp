@@ -13,16 +13,9 @@
 	}
 %>
 
-
-
 	<h1>Cadastro de Aluno</h1>	
-	
-	
-
-	
-	
-	
-    <form action="ConfirmarCadastroServlet" method="post">
+		
+    <form action="cadastrar" method="post">
     
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" ><br><br>
@@ -45,8 +38,6 @@
         <input type="submit" value="Confirmar Cadastro">
         <a href="listarAlunos.jsp">Voltar</a>
     </form>
-
-
 
 
 

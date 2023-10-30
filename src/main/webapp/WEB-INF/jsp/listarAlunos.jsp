@@ -23,7 +23,7 @@ List<Aluno> listaAlunos = (List<Aluno>) request.getAttribute("listaAlunos"); %>
 
 <h2>Alunos Cadastrados</h2>
 
-<form action="PesquisaServlet" method="post">       
+<form action="pesquisa" method="post">       
 		<select name="tipoPesquisa">   
 				<option value="nome">Nome</option>                  
                 <option value="matricula">Matricula</option>         		
@@ -50,13 +50,13 @@ List<Aluno> listaAlunos = (List<Aluno>) request.getAttribute("listaAlunos"); %>
 	<%  if (listaAlunos != null) {
 			for (Aluno aluno : listaAlunos) { %>
 		<tr>	
-			<td> <a href="DetalharServlet?id=<%= aluno.getId() %>"> Detalhar</a></td>
+			<td> <a href="detalhar?id=<%= aluno.getId() %>"> Detalhar</a></td>
 			<td> <%= aluno.getMatricula() %>   </td>
 			<td> <%= aluno.getNome() %>   </td>
 			<td> <%= aluno.getIdade()  %>   </td>
 			<td> <%= aluno.getGenero() %>   </td>
 			<td> <%= aluno.getSemestre() %>   </td>
-			<td> <a href="ExcluirServlet?id=<%= aluno.getId() %>">Excluir</a></td>
+			<td> <a href="excluir?id=<%= aluno.getId() %>">Excluir</a></td>
 		</tr>
 		<% } }%>
 	

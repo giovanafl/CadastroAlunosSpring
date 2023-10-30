@@ -47,14 +47,14 @@
 	
 	<!--  a href="listarAlunos.jsp">Voltar</a>	-->	
 	
-<form action="AlterarServlet" method="post">	
+<!--<form action="AlterarServlet" method="post">	
 	<input type="button"  onclick="javascript:location.href='ListarServlet'"  value="Confirmar">	
 	<input type="hidden"  name="id" value="<%=aluno.getId()%>">		
 	<input type="submit" value="Alterar">   
-</form> 	
+</form> 	-->
 	
- 	<!--<input type="button"  onclick="javascript:location.href='listarAlunos.jsp'"  value="Voltar">-->	
-	<!--<a href="AlterarServlet?id=<%=aluno.getId()%>">Alterar</a>-->
+ 	<input type="button"  onclick="javascript:location.href='listarAlunos.jsp'"  value="Voltar">
+	<a href="alterar?id=<%=aluno.getId()%>">Alterar</a>
 	
 	
 	
